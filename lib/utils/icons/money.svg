@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="35" viewBox="0 0 45 35">
+  <g id="Icon_ionic-md-cash" data-name="Icon ionic-md-cash" transform="translate(-2.25 -6.75)">
+    <path id="Path_7" data-name="Path 7" d="M2.25,6.75v30.5h45V6.75ZM18.372,33.438H10.3c0-3.169-2.16-5.731-4.831-5.731V18.188c3.546,0,6.429-3.419,6.429-7.625h6.479A19.981,19.981,0,0,0,15.107,22,19.981,19.981,0,0,0,18.372,33.438Zm25.664-5.731c-2.612,0-4.821,2.562-4.821,5.731H31.128A19.981,19.981,0,0,0,34.393,22a19.981,19.981,0,0,0-3.265-11.438h6.479c0,4.206,2.883,7.625,6.429,7.625Z" transform="translate(0)" fill="#afacac"/>
+    <path id="Path_8" data-name="Path 8" d="M2.25,27h45v2.25h-45Z" transform="translate(0 12.5)" fill="#afacac"/>
+  </g>
+</svg>

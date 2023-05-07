@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "587982011226",
+    "project_id": "financialfusion-5fdf5",
+    "storage_bucket": "financialfusion-5fdf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587982011226:android:3c22973812a9faf7d71163",
+        "android_client_info": {
+          "package_name": "com.roghani.ffapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587982011226-64umc4fia73huq1gpvfnd6nfuei3k7ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABByKmXekD-g2TSUjb-bkiUL2TeNcbaug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587982011226-64umc4fia73huq1gpvfnd6nfuei3k7ig.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "587982011226-vhv21g6tukfaj3kv9ppb74m2bq9tnlo1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ffapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

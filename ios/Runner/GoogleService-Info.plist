@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>587982011226-vhv21g6tukfaj3kv9ppb74m2bq9tnlo1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.587982011226-vhv21g6tukfaj3kv9ppb74m2bq9tnlo1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBnyeAT-bqMYAL7aBp_Xc6Pyj7zOiacL5s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>587982011226</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.ffapp</string>
+	<key>PROJECT_ID</key>
+	<string>financialfusion-5fdf5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>financialfusion-5fdf5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:587982011226:ios:8b05289af7c0c8f9d71163</string>
+</dict>
+</plist>
