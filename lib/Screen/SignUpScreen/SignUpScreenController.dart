@@ -66,7 +66,7 @@ class SignUpScreenController extends GetxController{
                     idFrontSide: await uploadImage('frontSide', frontSide!),
                     idBackSide: await uploadImage('backSide', backSide!),
                 email: emailController.text,
-                profit: 0,
+                profit: 0, profile: '',
                 );
                 // Add the user information to Cloud Firestore
                 await FirebaseFirestore.instance.collection('Users').doc(value.user!.uid).set(userInfo.toJson());

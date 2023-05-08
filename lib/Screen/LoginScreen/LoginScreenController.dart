@@ -22,12 +22,17 @@ class LoginScreenController extends GetxController{
 
 
   Future<String?> loginUser() async {
+    // Get.toNamed(Routes.homeScreen);
     processing=true;
     update();
+    try{
+      _auth.signOut();
+    }catch(e){}
     bool result = await InternetConnectionChecker().hasConnection;
     if(result){
       if(loginGlobalKey.currentState!.validate()){
         try {
+
           UserCredential userCredential = await _auth.signInWithEmailAndPassword(
             email: emailController.text,
             password: passController.text,
@@ -49,7 +54,7 @@ class LoginScreenController extends GetxController{
                     idFrontSide: value['idFrontSide'],
                     email: value['email'],
                     idBackSide: value['idBackSide'],
-                    profit: value['profit']
+                    profit: value['profit'], profile: value['profile']??''
                 );
                 Get.toNamed(Routes.homeScreen);
               });

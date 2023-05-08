@@ -9,6 +9,7 @@ class UserInformation {
   String idBackSide;
   String email;
   double profit;
+  String? profile;
 
   UserInformation({
     required this.userId,
@@ -20,6 +21,7 @@ class UserInformation {
     required this.idBackSide,
     required this.email,
     required this.profit,
+    required this.profile,
   });
 
   // Factory method to create a UserInfo object from a Firestore document snapshot
@@ -37,6 +39,7 @@ class UserInformation {
       idBackSide: data['idBackSide'],
       email: data['email'],
       profit: data['profit'],
+      profile: data['profile'],
     );
   }
 
@@ -53,6 +56,7 @@ class UserInformation {
       'idBackSide': idBackSide,
       'email': email,
       'profit': profit,
+      'profile': profile,
     };
   }
 }
