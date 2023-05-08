@@ -2,7 +2,10 @@
 
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ffapp/globalModels/AppCalculations.dart';
 import 'package:ffapp/globalModels/UserInfo.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,15 +13,47 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class GlobalController extends GetxController{
+  final FirebaseAuth _auth= FirebaseAuth.instance;
+  final FirebaseFirestore firebaseFireStore=FirebaseFirestore.instance;
   @override
   void onInit() async{
     await checkAllPermissions();
+    await getUserInfo();
+    await getAppPreviewCalculations();
+
+    update();
     super.onInit();
   }
+  getUserInfo()async{
+    final user =firebaseFireStore.collection('Users').doc(_auth.currentUser!.uid);
+    await user.get().then((value){
+      List<dynamic> balanceJson = value['balance'];
+      List<BalanceEntry> balanceF = balanceJson.map((entry) => BalanceEntry.fromJson(entry)).toList();
+      userInformation=UserInformation(
+          userId: value['userId'],
+          userType: value['userType'],
+          name: value['name'],
+          phone: value['phone'],
+          balance: balanceF,
+          idFrontSide: value['idFrontSide'],
+          email: value['email'],
+          idBackSide: value['idBackSide'],
+          highest: value['highest'].toDouble(),
+          profit: value['profit'].toDouble(), profile: value['profile']??''
+      );
+
+    });
+    update();
+  }
   UserInformation? userInformation;
-
-
-
+  AppCalculations? appPreviewCalculations;
+  double totalPreviewBalance=0;
+  double previousValue=0;
+  bool rise=false;
+  double max=0;
+  // getMax(){
+  //   max = userInformation!.balance.reduce((value, element) => value.amount > element.amount ? value : element).amount;
+  // }
   bool cPerm=false;
   bool sPerm=false;
   checkAllPermissions()async{
@@ -75,6 +110,28 @@ class GlobalController extends GetxController{
     } else {
       return false;
     }
+  }
+
+
+  getAppPreviewCalculations()async{
+    // final user =firebaseFirestore.collection('Users').doc(userId);
+    final userRef = firebaseFireStore.collection('Admin').doc('AppPreviewCalculation');
+    final userData = await userRef.get();
+    if(userData.exists){
+      appPreviewCalculations=AppCalculations.fromFirestore(userData);
+      update();
+    }else{
+      // await userRef.set(AppCalculations(
+      //     totalBalance: [
+      //       BalanceEntry(amount: 0, date: DateTime.now())
+      //     ], profit: 0, equity: 0, highest: 0).toJson());
+    }
+    if(userInformation!.balance.length>1){
+      max = userInformation!.balance.reduce((value, element) => value.amount > element.amount ? value : element).amount*2;
+    }else {
+      max=userInformation!.balance.last.amount*2;
+      }
+    update();
   }
 
 }

@@ -54,6 +54,7 @@ class LoginScreenController extends GetxController{
                     idFrontSide: value['idFrontSide'],
                     email: value['email'],
                     idBackSide: value['idBackSide'],
+                    highest: value['highest'],
                     profit: value['profit'], profile: value['profile']??''
                 );
                 Get.toNamed(Routes.homeScreen);

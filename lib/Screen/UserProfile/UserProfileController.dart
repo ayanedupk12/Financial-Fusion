@@ -62,6 +62,7 @@ class UserProfileController extends GetxController{
               idBackSide: value['idBackSide'],
               email: value['email'],
               profit: value['profit'],
+              highest: value['highest'],
               profile: value['profile']).toJson());
         });
       }
@@ -110,8 +111,10 @@ class _ChangeImagePickerState extends State<ChangeImagePicker> {
           idFrontSide: value['idFrontSide'],
           idBackSide: value['idBackSide'],
           email: value['email'],
-          profit: value['profit'],
+          profit: value['profit'].toDouble(),
+          highest: value['highest'].toDouble(),
           profile: url).toJson());
+      globalController.getUserInfo();
     });
     print(globalController.userInformation!.toJson());
 

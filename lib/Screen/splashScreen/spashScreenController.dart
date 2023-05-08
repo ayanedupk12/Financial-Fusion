@@ -41,7 +41,8 @@ class SplashScreenController extends GetxController{
                           idFrontSide: value['idFrontSide'],
                           email: value['email'],
                           idBackSide: value['idBackSide'],
-                          profit: value['profit'], profile: value['profile']??''
+                          highest: value['highest'].toDouble(),
+                          profit: value['profit'].toDouble(), profile: value['profile']??''
                       );
                       Get.toNamed(Routes.homeScreen);
                     });

@@ -9,6 +9,7 @@ class UserInformation {
   String idBackSide;
   String email;
   double profit;
+  double highest;
   String? profile;
 
   UserInformation({
@@ -22,6 +23,7 @@ class UserInformation {
     required this.email,
     required this.profit,
     required this.profile,
+    required this.highest,
   });
 
   // Factory method to create a UserInfo object from a Firestore document snapshot
@@ -40,6 +42,7 @@ class UserInformation {
       email: data['email'],
       profit: data['profit'],
       profile: data['profile'],
+      highest: data['highest'],
     );
   }
 
@@ -57,6 +60,7 @@ class UserInformation {
       'email': email,
       'profit': profit,
       'profile': profile,
+      'highest': highest,
     };
   }
 }
@@ -81,7 +85,7 @@ class BalanceEntry {
   // Create a new BalanceEntry object from a JSON object
   factory BalanceEntry.fromJson(Map<String, dynamic> json) {
     return BalanceEntry(
-      amount: json['amount'],
+      amount: json['amount'].toDouble(),
       date: DateTime.parse(json['date']),
     );
   }
