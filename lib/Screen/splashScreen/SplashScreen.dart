@@ -20,6 +20,7 @@ final controller=Get.put(SplashScreenController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
+
         child: SizedBox(
             height: Get.height/2,
             width: Get.width/2,
